@@ -1,0 +1,39 @@
+server:
+  port: 8888
+  servlet:
+    session:
+#      timeout: 10S
+      cookie:
+        http-only: true
+        secure: false
+
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://192.168.0.104:3306/securityjwt?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: ruhr
+    password: RUHR@007mysql
+    driver-class-name: com.mysql.jdbc.Driver
+  freemarker:
+    cache: false # 缓存配置 开发阶段应该配置为false 因为经常会改
+    suffix: .html # 模版后缀名 默认为ftl
+    charset: UTF-8 # 文件编码
+    template-loader-path: classpath:/templates/
+  security:
+    loginType: JSON
+#    user:
+#      name: admin
+#      password: admin
+
+
+logging:
+  config: classpath:log4j2-dev.xml
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+

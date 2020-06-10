@@ -1,0 +1,27 @@
+server:
+  port: 8889
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://192.168.0.104:3306/securityjwt?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: ruhr
+    password: RUHR@007mysql
+    driver-class-name: com.mysql.jdbc.Driver
+  security:
+    loginType: JSON
+
+
+logging:
+    config: classpath:log4j2-dev.xml
+
+mybatis:
+    configuration:
+      mapUnderscoreToCamelCase: true
+
+jwt:
+    secret: ffjaksdfjaklf
+    expiration: 3600000
+    header: JWTHeaderName
